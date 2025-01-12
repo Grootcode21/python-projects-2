@@ -7,5 +7,5 @@ def phone_validation(phone_number):
         if pn.is_valid_number(parsed_number):
             return pn.format_number(parsed_number, pn.PhoneNumberFormat.E164)
 
-    except pn.NumberParseException as e:
-        return f"Invalid phone number: {str(e)}"
+    except pn.NumberParseException:
+        return "Invalid phone number"
