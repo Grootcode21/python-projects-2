@@ -10,3 +10,5 @@ def phone_validation(phone_number):
 
     except pn.NumberParseException:
         return "Invalid phone number"
+
+print(phone_validation(700407601))
