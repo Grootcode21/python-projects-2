@@ -6,3 +6,6 @@ def is_valid_email(email):
     try:
         valid = validate_email(email)
         return f"valid: (valid.email)"
+
+    except EmailNotValidError as e:
+        return f"Invalid: {str(e)}"
