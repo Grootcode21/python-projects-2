@@ -9,3 +9,8 @@ def is_valid_email(email):
 
     except EmailNotValidError as e:
         return f"Invalid: {str(e)}"
+
+
+print(is_valid_email("user@example.com"))
+print(is_valid_email("invalid email"))
+print(is_valid_email("itmindspace@gmail.com"))
