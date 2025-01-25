@@ -1,4 +1,4 @@
-from email_validator import EmailValidator, EmailNotValidError
+from email_validator import validate_email, EmailNotValidError
 
 #pip install email_validator
 
