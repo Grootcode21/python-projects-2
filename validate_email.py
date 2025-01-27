@@ -1,5 +1,4 @@
 from email_validator import validate_email, EmailNotValidError
-
 #pip install email_validator
 
 def is_valid_email(email):
@@ -11,6 +10,7 @@ def is_valid_email(email):
         return f"Invalid: {str(e)}"
 
 
+#Test outputs
 print(is_valid_email("user@example.com"))
 print(is_valid_email("invalid email"))
 print(is_valid_email("itmindspace@gmail.com"))
