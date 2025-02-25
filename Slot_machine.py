@@ -27,7 +27,23 @@ def get_number_of_lines():
         else:
             print("Please enter a number.")
 
-    return lines  
+    return lines 
+
+def get_bet():
+    while True:
+        amount = input("What amount would you like to bet?")
+        if amount.isdigit():
+            amount = int(amount)
+            if MIN_BET <= amount <= MAX_BET :
+                break
+            else:
+                #f available in python 3.6 and above!
+                #Automatically converts strings
+                print(f"Amount MUST be btwn ${MIN_BET} - ${MAX_BET}.")
+        else:
+            print("Please enter a number.")
+
+    return amount
 
 def main():
     balance = deposit()
