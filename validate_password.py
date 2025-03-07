@@ -1,5 +1,7 @@
+password = input("Please enter your password: ")
 
-def validate_password(password):
+
+def validate_password():
     if len(password) < 8:
         return False
     elif not any(char.isupper() for char in password):
@@ -7,12 +9,12 @@ def validate_password(password):
     elif not any(char.islower() for char in password):
         return False
     elif not any(char.isdigit() for char in password):
-                 return False
+        return False
     elif not any(char in "!@#$%^&*" for char in password):
-                 return False
+        return False
     elif " " in password:
-           return False
+        return False
     else:
         return True
     
-validate_password(password)
+validate_password()
