@@ -1,5 +1,6 @@
 password = input("Please enter your password: ")
 
+
 def validate_password():
     if len(password) < 8:
         print("Your password is too short")
@@ -12,8 +13,9 @@ def validate_password():
     elif not any(char in "!@#$%^&*" for char in password):
         print("Your password does not have special character-s")
     elif " " in password:
-        print("Your password contains spaces")
+        print("Your password contains space-s")
     else:
         print("Your password is password")
+
 
 validate_password()
