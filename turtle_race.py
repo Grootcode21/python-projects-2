@@ -2,8 +2,7 @@ import turtle
 
 WIDTH, HEIGHT = 500, 500
 
-screen = turtle.Screen()
-screen.setup(WIDTH, HEIGHT)
+
 
 def get_number_of_racers():
     racers = 0
@@ -19,6 +18,12 @@ def get_number_of_racers():
         else:
             print("The number is not in ranger 2-10. Try Again!")
 
+
+def init_turtle():
+    screen = turtle.Screen()
+    screen.setup(WIDTH, HEIGHT)
+    screen.title("Turtle Racing!")
+    
 racers = get_number_of_racers()
 print(racers)
 
