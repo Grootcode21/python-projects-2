@@ -1,7 +1,9 @@
 import turtle
 import time
+import random
 
 WIDTH, HEIGHT = 500, 500
+COLORS = [ 'red', 'green', 'orange, cyan', 'blue','yellow','black', 'pink', 'purple', 'brown']
 
 
 
@@ -20,6 +22,22 @@ def get_number_of_racers():
             print("The number is not in ranger 2-10. Try Again!")
 
 
+def create_turtles(colors):
+    turtles = []
+    spacingx = WIDTH // (len(colors) + 1)
+    for i, color in enumerate(colors):
+        racer = turtle.Turtle()
+        racer.color(color)
+        racer.shape('turtle')
+        racer.left(90)
+        racer.penup()
+        #set position(x.y)
+        racer.setpos(-WIDTH // 2+(i+1) * spacingx, -HEIGHT//2 + 20)
+        racer.pendown
+        turtles.append(racer)
+
+    return turtles
+
 def init_turtle():
     screen = turtle.Screen()
     screen.setup(WIDTH, HEIGHT)
@@ -27,29 +45,6 @@ def init_turtle():
     
 racers = get_number_of_racers()
 init_turtle()
-
-racer = turtle.Turtle()
-racer.speed(2)
-racer.penup()
-racer.shape('turtle') #turtle, cirle, arrow
-racer.color('cyan')
-racer.forward(100)
-racer.left(90)
-racer.pendown()
-racer.forward(100)
-racer.left(90)
-racer.backward(100)
-time.sleep(25)
-
-racer_2 = turtle.Turtle()
-racer_2.speed(4)
-racer_2.penup()
-racer_2.shape('turtle') #turtle, cirle, arrow
-racer_2.color('green')
-racer_2.forward(200)
-racer_2.left(90)
-racer_2.pendown()
-racer_2.forward(200)
-racer_2.left(90)
-racer_2.backward(200)
-time.sleep(25)
+random.shuffle(COLORS)
+colors = COLORS[:racers]
+create_turtles(colors)
