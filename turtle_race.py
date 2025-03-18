@@ -19,7 +19,7 @@ def get_number_of_racers():
         if 2 <= racers <= 10:
             return racers
         else:
-            print("The number is not in ranger 2-10. Try Again!")
+            print("The number is not in ranger 2-10.please Try Again!")
 
 def race(colors):
     turtles = create_turtles(colors)
@@ -60,5 +60,5 @@ init_turtle()
 random.shuffle(COLORS)
 colors = COLORS[:racers]
 winner = race(colors)
-print("The winner is the turle with color", winner)
+print("The winner is the turtle with color", winner)
 time.sleep(5)
