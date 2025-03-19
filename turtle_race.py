@@ -2,7 +2,7 @@ import turtle
 import time
 import random
 
-WIDTH, HEIGHT = 500, 500
+WIDTH, HEIGHT = 500, 700
 COLORS = [ 'red', 'green', 'orange', 'cyan', 'blue','yellow','black', 'pink', 'purple', 'brown']
 
 
