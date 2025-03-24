@@ -12,6 +12,7 @@ def main(stdscr):
     #stdscr.addstr("Hello World", curses.color_pair(2))
     stdscr.addstr(1,0, "Hello World")
     stdscr.refresh()
-    stdscr.getkey()
+    key = stdscr.getkey()
+    print(key)
 
 wrapper(main)
