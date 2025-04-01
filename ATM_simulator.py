@@ -8,3 +8,16 @@ while True:
     print("4. Exit")
 
     choice = int(input("Enter your choice: "))
+
+    if choice == 1:
+        print("Your balance is: ", balance)
+    elif choice == 2:
+        amount = int(input("Enter the amount you want to deposit: "))
+        if amount > 0:
+            balance = balance + amount 
+            print("Your new balance is: ", balance)
+        else:
+            print("Invalid amount. Try again")
+    elif choice == 3:
+        amount = int(input("Enter the amount to withdraw: "))
+        
