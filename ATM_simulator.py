@@ -20,4 +20,10 @@ while True:
             print("Invalid amount. Try again")
     elif choice == 3:
         amount = int(input("Enter the amount to withdraw: "))
-        
+        if amount > 0 and amount <= balance:
+            balance = balance - amount
+            print("Your new balance is: ", balance )
+        elif amount <= 0:
+            print("Invalid amount")
+    else:
+        break
