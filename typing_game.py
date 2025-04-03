@@ -14,18 +14,29 @@ def wpm_test(stdscr):
     target_text = "Hello World, this is a nice way to learn typing"
     current_text = []
 
-    stdscr.clear()
-    stdscr.addstr(target_text)
-    stdscr.refresh()
+
    
     while True:
-        key = stdscr.getkey()
-        current_text.append(key)
+        stdscr.clear()
+        stdscr.addstr(target_text)
 
         for char in current_text:
             stdscr.addstr(char, curses.color_pair(1))
 
         stdscr.refresh()
+
+        key = stdscr.getkey()
+
+        if ord(key) == 27:
+            break
+
+        if key in ("KEY_BACKSPACE", '\b', "\x7f"):
+            if len(current_text) > 0:
+                current_text.pop()
+        else:
+            current_text.append(key)
+
+
 
 
 
