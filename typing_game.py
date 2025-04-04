@@ -10,6 +10,12 @@ def start_screen(stdscr):
     stdscr.refresh()
     stdscr.getkey()
 
+def display_text(stdscr, target, current, wpm=0):
+        stdscr.addstr(target) 
+
+        for i, char in enumerate(current):
+            stdscr.addstr(0,i, char, curses.color_pair(1))
+
 def wpm_test(stdscr):
     target_text = "Hello World, this is a nice way to learn typing"
     current_text = []
@@ -18,10 +24,8 @@ def wpm_test(stdscr):
    
     while True:
         stdscr.clear()
-        stdscr.addstr(target_text)
+        display_text(stdscr, target_text,  current_text)
 
-        for char in current_text:
-            stdscr.addstr(char, curses.color_pair(1))
 
         stdscr.refresh()
 
