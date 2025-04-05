@@ -14,6 +14,7 @@ def display_text(stdscr, target, current, wpm=0):
         stdscr.addstr(target) 
 
         for i, char in enumerate(current):
+            correct_char = target[i]
             stdscr.addstr(0,i, char, curses.color_pair(1))
 
 def wpm_test(stdscr):
