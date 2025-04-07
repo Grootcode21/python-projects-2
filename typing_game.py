@@ -11,7 +11,8 @@ def start_screen(stdscr):
     stdscr.getkey()
 
 def display_text(stdscr, target, current, wpm=0):
-        stdscr.addstr(target) 
+        stdscr.addstr(target)
+        stdscr.addstr(1,0,f"WPM: {wpm}")
 
         for i, char in enumerate(current):
             correct_char = target[i]
@@ -24,6 +25,7 @@ def display_text(stdscr, target, current, wpm=0):
 def wpm_test(stdscr):
     target_text = "Hello World, this is a nice way to learn typing"
     current_text = []
+    wpm = 0
 
 
    
@@ -42,7 +44,7 @@ def wpm_test(stdscr):
         if key in ("KEY_BACKSPACE", '\b', "\x7f"):
             if len(current_text) > 0:
                 current_text.pop()
-        else:
+        elif len(current_text) < len(target_text):
             current_text.append(key)
 
 
