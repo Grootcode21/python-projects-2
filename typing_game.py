@@ -2,6 +2,7 @@
 #To run: nagivate to where the file is,click at the top C:\Users\ALIENWARE\Desktop\SOURCE CODES\Python Projects 2, type cmd click Enter
 import curses
 from curses import wrapper
+import time
 
 def start_screen(stdscr):
     stdscr.clear()
@@ -26,17 +27,26 @@ def wpm_test(stdscr):
     target_text = "Hello World, this is a nice way to learn typing"
     current_text = []
     wpm = 0
+    start_time = time.time()
+    stdscr.nodelay(True)
 
 
    
     while True:
+        time_elapsed = max(time.time() - start_time,1)
+        wpm = round((len(current_text/(time_elapsed /60)))5)
+
+
         stdscr.clear()
         display_text(stdscr, target_text,  current_text)
 
 
         stdscr.refresh()
 
-        key = stdscr.getkey()
+        try:
+            key = stdscr.getkey()
+        except:
+            continue
 
         if ord(key) == 27:
             break
