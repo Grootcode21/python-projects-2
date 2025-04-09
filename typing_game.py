@@ -34,7 +34,7 @@ def wpm_test(stdscr):
    
     while True:
         time_elapsed = max(time.time() - start_time,1)
-        wpm = round((len(current_text/(time_elapsed /60)))5)
+        wpm = round((len(current_text)/(time_elapsed /60))/5)
 
 
         stdscr.clear()
