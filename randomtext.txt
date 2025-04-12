@@ -1,0 +1,2 @@
+This is a test block for the typing project
+The quick brown fox jumped over the lazy fox.
