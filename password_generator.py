@@ -34,4 +34,5 @@ def generate_password(min_length, numbers=True, special_characters=True):
 
     return pwd
 
-generate_password(10)
+pwd = generate_password(10)
+print(pwd)
