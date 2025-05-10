@@ -1,4 +1,4 @@
-#pip install curses
+#pip install windows-curses
 #To run: nagivate to where the file is,click at the top C:\Users\ALIENWARE\Desktop\SOURCE CODES\Python Projects 2, type cmd click Enter
 import curses
 from curses import wrapper
