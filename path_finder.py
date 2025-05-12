@@ -11,4 +11,7 @@ maze = [
 
 def main(stdscr):
     stdscr.clear()
-    
+    stdscr.addstrs()
+    stdscr.refresh()
+    stdscr.getch()
+
