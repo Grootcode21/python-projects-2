@@ -5,6 +5,9 @@ import time
 import queue
 
 maze = [
+    ["#", " ", "#", " ", "#", " ", "#", " ", "#"],
+    ["#", " ", "#", " ", "#", " ", "#", " ", "#"],
+    ["#", " ", "#", " ", "#", " ", "#", " ", "#"]
 
 ]
 
@@ -14,7 +17,7 @@ def print_maze(maze, stdscr, path=[]):
 
     for i, row in enumerate(maze):
         for j, value in enumerate(row):
-            stdscr.addstr(i, j, value)
+            stdscr.addstr(i, j*2, value, BLUE)
 
 
 def main(stdscr):
@@ -23,10 +26,11 @@ def main(stdscr):
     
     #Breadth-search algorithm
 
-    # stdscr.clear()
+    stdscr.clear()
     # stdscr.addstrs(0, 0, "Hello World!", blue_and_black)
-    # stdscr.refresh()
-    # stdscr.getch()
+    print_maze(maze, stdscr)
+    stdscr.refresh()
+    stdscr.getch()
 
 wrapper(main)
 
