@@ -25,6 +25,10 @@ def print_maze(maze, stdscr, path=[]):
         for j, value in enumerate(row):
             stdscr.addstr(i, j*2, value, BLUE)
 
+def find_path(maze, stdscr):
+    start = "O"
+    end = "X"
+
 
 def main(stdscr):
     curses.init_pair(1, curses.COLOR_BLUE, curses.COLOR_BLACK)
