@@ -25,6 +25,12 @@ def print_maze(maze, stdscr, path=[]):
         for j, value in enumerate(row):
             stdscr.addstr(i, j*2, value, BLUE)
 
+def find_start(maze):
+    for i, row in enumerate(maze):
+        for j, value in enumerate(row):
+            if value == start:
+                return i, j
+
 def find_path(maze, stdscr):
     start = "O"
     end = "X"
