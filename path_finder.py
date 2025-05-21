@@ -36,6 +36,8 @@ def find_start(maze, start):
 def find_path(maze, stdscr):
     start = "O"
     end = "X"
+    start_pos = find_start(maze, start)
+
 
 
 def main(stdscr):
