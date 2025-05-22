@@ -38,6 +38,14 @@ def find_path(maze, stdscr):
     end = "X"
     start_pos = find_start(maze, start)
 
+    q = queue.Queue()
+    q.put((start_pos, [start_pos]))
+
+    visited = set()
+
+    while not q.empty():
+        current_pos, path = q.get()
+
 
 
 def main(stdscr):
