@@ -45,6 +45,12 @@ def find_path(maze, stdscr):
 
     while not q.empty():
         current_pos, path = q.get()
+        row, col = current_pos
+
+        if maze[row][col] == end:
+            return path
+        
+        
 
 
 
