@@ -23,7 +23,10 @@ def print_maze(maze, stdscr, path=[]):
 
     for i, row in enumerate(maze):
         for j, value in enumerate(row):
-            stdscr.addstr(i, j*2, value, BLUE)
+            for (i, j) in path:
+                stdscr.addstr(i, j*2, "X", RED)
+            else:
+                stdscr.addstr(i, j*2, value, BLUE)
 
 def find_start(maze, start):
     for i, row in enumerate(maze):
@@ -46,6 +49,11 @@ def find_path(maze, stdscr):
     while not q.empty():
         current_pos, path = q.get()
         row, col = current_pos
+
+        stdscr.clear()
+        print_maze(maze, stdscr, path)
+        time.sleep(0.2)
+        stdscr.refresh()
 
         if maze[row][col] == end:
             return path
@@ -89,10 +97,9 @@ def main(stdscr):
     
     #Breadth-search algorithm
 
-    stdscr.clear()
+    
     # stdscr.addstrs(0, 0, "Hello World!", blue_and_black)
-    print_maze(maze, stdscr)
-    stdscr.refresh()
+    find_path(maze, stdscr)
     stdscr.getch()
 
 wrapper(main)
