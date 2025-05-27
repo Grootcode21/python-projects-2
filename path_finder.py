@@ -60,7 +60,8 @@ def find_path(maze, stdscr):
                 continue
 
             new_path = path + [neighbour]
-            q.put((neighbour))
+            q.put((neighbour, new_path))
+            visited.add(neighbour)
 
     
 
