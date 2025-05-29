@@ -36,7 +36,7 @@ def find_start(maze, start):
     return None
 
 
-def find_path(maze, stdscr):
+def find_path(maze, stdscr): 
     start = "O"
     end = "X"
     start_pos = find_start(maze, start)
@@ -98,7 +98,7 @@ def main(stdscr):
     #Breadth-search algorithm
 
     
-    # stdscr.addstrs(0, 0, "Hello World!", blue_and_black)
+    # stdscr.addstr(0, 0, "Hello World!", blue_and_black)
     find_path(maze, stdscr)
     stdscr.getch()
 
