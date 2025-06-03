@@ -14,9 +14,11 @@ def get_links():
 
 def get_scoreboard():
     scoreboard = get_links()['currentScoreboard']
-    data = get(BASE_URL + scoreboard).json()
+    games = get(BASE_URL + scoreboard).json()['games']
 
-    printer.pprint(data)
+    for game in games:
+        printer.pprint(game.keys())
+        break
 
 get_scoreboard()
 
