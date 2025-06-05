@@ -22,7 +22,10 @@ def get_scoreboard():
         clock = game['clock']
         period = game['period']
 
-        print(f"{home_team}  vs {away_team}, {clock}, {period}")
+
+        print("-----------------------------------------")
+        #print(f"{home_team}  vs {away_team}, {clock}, {period}")
+        print(f"{home_team['triCode']}  vs {away_team['triCode']}, {clock}, {period}")
 
 get_scoreboard()
 
