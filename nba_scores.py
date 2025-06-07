@@ -26,6 +26,8 @@ def get_scoreboard():
         print("-----------------------------------------")
         #print(f"{home_team}  vs {away_team}, {clock}, {period}")
         print(f"{home_team['triCode']}  vs {away_team['triCode']}, {clock}, {period}")
+        print(f"{home_team['score'] - {away_team['score']}}")
+        print(f"{clock} - {period['current']}")
 
 get_scoreboard()
 
