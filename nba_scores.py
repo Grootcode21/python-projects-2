@@ -29,6 +29,13 @@ def get_scoreboard():
         print(f"{home_team['score'] - {away_team['score']}}")
         print(f"{clock} - {period['current']}")
 
-get_scoreboard()
+def get_stats():
+    stats = get_links()['leagueTeamStatsLeaders']
+    data = get(BASE_URL + stats).json()
+    printer.pprint(data.keys())
+
+
+#get_scoreboard()
+get_stats()
 
 
