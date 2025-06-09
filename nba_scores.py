@@ -31,8 +31,8 @@ def get_scoreboard():
 
 def get_stats():
     stats = get_links()['leagueTeamStatsLeaders']
-    data = get(BASE_URL + stats).json()
-    printer.pprint(data.keys())
+    teams = get(BASE_URL + stats).json()['league']['standard']['regularSeason']['teams']
+    printer.pprint(teams[0].keys())
 
 
 #get_scoreboard()
