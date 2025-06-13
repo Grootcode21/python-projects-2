@@ -34,6 +34,8 @@ def get_stats():
     teams = get(BASE_URL + stats).json()['league']['standard']['regularSeason']['teams']
     printer.pprint(teams[0].keys())
 
+    teams = list(filter(lambda x: x['team'] != "name", teams))
+
     for team in teams:
         name = team['name']
         nickname = team['nickname']
