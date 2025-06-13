@@ -3,7 +3,7 @@ from requests import get
 from pprint import PrettyPrinter
 
 BASE_URL = "https:/data.nba.net"
-ALL_JSON = "prod/v1/today.json"
+ALL_JSON = "/prod/v1/today.json"
 
 printer = PrettyPrinter()
 
@@ -35,12 +35,13 @@ def get_stats():
     printer.pprint(teams[0].keys())
 
     teams = list(filter(lambda x: x['team'] != "name", teams))
+    teams.sort(key=lambda x: int(x['ppg']['rank']))
 
-    for team in teams:
+    for i, team in enumerate(teams):
         name = team['name']
         nickname = team['nickname']
-        ppg = team['ppg']
-        print(f"{name} - {nickname} - {ppg}")
+        ppg = team['ppg'][['avg']]
+        print(f"{i + 1}.{name} - {nickname} - {ppg}")
 
 
 #get_scoreboard()
