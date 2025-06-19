@@ -2,7 +2,7 @@ from requests import get
 from pprint import PrettyPrinter
 
 BASE_URL = "https://free.currconv.com/"
-API_KEY = ""
+API_KEY = "562ddaf40c95f5d58108"
 
 printer = PrettyPrinter()
 
@@ -14,4 +14,4 @@ def get_currencies():
 
     printer.pprint()
 
-    
+get_currencies()
