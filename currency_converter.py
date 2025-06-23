@@ -17,8 +17,8 @@ def get_currencies():
 
     return data
 
-def print_currencies:(currencies):
-for currency in currerncies:
-    name  
+def print_currencies(currencies):
+    for currency in currerncies:
+        name  
 data = get_currencies()
 print.pprint(data)
