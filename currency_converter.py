@@ -18,7 +18,9 @@ def get_currencies():
     return data
 
 def print_currencies(currencies):
-    for currency in currerncies:
-        name  
+    for currency in currencies:
+        name = currency['currencyName']
+        _id = currency['id']
+        symbol = currency.get("currencySymbol", "")  
 data = get_currencies()
 print.pprint(data)
