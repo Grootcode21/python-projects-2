@@ -24,5 +24,9 @@ def print_currencies(currencies):
         symbol = currency.get("currencySymbol", "") 
         print(f"{_id} - {name} - {symbol}") 
 
+
+def exchange_rate(currency1, currency2):
+    endpoint = f"api/v7/convert?q={currency1}_{currency2}&compact=ultraa&pikey={API_KEY}"
+
 data = get_currencies()
 print_currencies(data)
