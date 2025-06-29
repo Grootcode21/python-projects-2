@@ -27,6 +27,8 @@ def print_currencies(currencies):
 
 def exchange_rate(currency1, currency2):
     endpoint = f"api/v7/convert?q={currency1}_{currency2}&compact=ultraa&pikey={API_KEY}"
+    url = BASE_URL + endpoint
+    response = get(url)
 
 data = get_currencies()
 print_currencies(data)
