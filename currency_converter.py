@@ -38,3 +38,17 @@ def exchange_rate(currency1, currency2):
     print(f"{currency1} -> {currency2} = {rate}")
     
     return rate
+
+def convert(currency1, currency2, amount):
+    rate = exchange_rate(currency1, currency2)
+    if rate is None:
+        return
+    try:
+        amount = float(amount)
+    except:
+        print("Invalid amount")
+        return
+    
+    converted_amount = rate * amount
+    print(f"{amount} {currency1} is equal to {converted_amount} {currency2}")
+    return converted_amount
