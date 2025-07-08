@@ -14,3 +14,6 @@ def download_video(url, save_path):
         print(e)
 
 url = ""
+save_path = "C:/Users/ALIENWARE/Desktop/SOURCE CODES"
+
+download_video(url, save_path)
