@@ -13,7 +13,12 @@ def download_video(url, save_path):
     except Exception as e:
         print(e)
 
-url = ""
-save_path = "C:/Users/ALIENWARE/Desktop/SOURCE CODES"
+def open_file_dialog():
+    folder = filedialog.askdirectory()
+    if folder:
+        print(f"Selected folder: {folder}")
 
-download_video(url, save_path)
+    return folder
+
+root = tk.Tk()
+root.withdraw()
