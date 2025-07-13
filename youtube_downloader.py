@@ -35,3 +35,6 @@ if __name__ == "__main__":
 
     else:
         print("Invalid save location")
+
+
+#To run type 'python youtube.py' in the terminal
