@@ -24,6 +24,6 @@ schedule.every().day.at("18:55").do(lambda: copy_folder_to_directory(source_dir,
 while True:
     schedule.run_pending()
     time.sleep(60)
-
+ 
 #to run, python backup.py
 #to quit, control + C
