@@ -10,3 +10,8 @@ def generate_code():
     for _ in range(CODE_LENGTH):
         color = random.choice(COLORS)
         code.append(color)
+
+    return code
+
+def guess_code():
+    guess = input("Guess: ").upper().split(" ")
