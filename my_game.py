@@ -23,7 +23,7 @@ def guess_code():
 
         for color in guess:
             if color not in COLORS:
-                print(f"Invalid color: {color}. Try Again")
+                print(f"Invalid color: {color}. Try Again!")
                 break
         else:
             break
