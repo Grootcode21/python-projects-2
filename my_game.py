@@ -52,5 +52,5 @@ def check_code(guess, real_code):
 
 def game():
     code = generate_code()
-    for attempts in rane(1, TRIES + 1 ):
+    for attempts in range(1, TRIES + 1 ):
         guess = guess_code()       
