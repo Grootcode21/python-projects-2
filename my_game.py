@@ -64,4 +64,5 @@ def game():
     else:
         print("You ran out of tries, the code was:", code)
 
-        
+if __name__ == "__main__":
+    game()
