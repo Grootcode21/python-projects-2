@@ -28,6 +28,8 @@ def guess_code():
         else:
             break
 
+    return guess
+
 def check_code(guess, real_code):
     color_counts = {}
     correct_pos = 0
@@ -45,7 +47,7 @@ def check_code(guess, real_code):
 
     for guess_color, real_color in zip(guess, real_code):
         if guess_color in color_counts and color_counts[guess_color] > 0:
-            correct_pos +=1
+            incorrect_pos +=1
             color_counts[guess_color] -= 1 
 
     return correct_pos, incorrect_pos 
@@ -60,6 +62,7 @@ def game():
         correct_pos, incorrect_pos = check_code(guess, code)
         if correct_pos == CODE_LENGTH:
             print(f"You guessed the code in {attempts} tries!")
+            break
 
         print(f"Correct Positions: {correct_pos} | Incorrect Positions: {incorrect_pos}")
     else:
