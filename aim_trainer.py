@@ -18,3 +18,9 @@ def main():
             if event.type == pygame.QUIT:
                 run = False
                 break
+
+    pygame.quit()
+
+if __name__ == "__main__":
+    main()
+
