@@ -10,6 +10,11 @@ WIDTH, HEIGHT = 800, 600
 WIN = pygame.display.set_mode(WIDTH, HEIGHT)
 pygame.display.set_caption("Aim Trainer")
 
+TARGET_INCREMENT = 400
+TARGET_EVENT = pygame.USEREVENT
+
+TARGET_PADDING = 30
+
 class Target():
     MAX_SIZE = 30
     GROWTH_RATE = 0.2
@@ -39,15 +44,23 @@ class Target():
         pygame.draw.circle(win, self.SECOND_COLOR, (self.x, self.y), self.size * 0.4) 
 
 
-
 def main():
     run = True
+    targets = []
+
+    pygame.time.set_timer(TARGET_EVENT, TARGET_INCREMENT)
 
     while run:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
                 break
+
+        if event.type == TARGET_EVENT:
+            x = random.randint(TARGET_PADDING, WIDTH - TARGET_PADDING)
+            Y = random.randint(TARGET_PADDING, HEIGHT - TARGET_PADDING)
+            target = Target(x, y)
+            targets.append(target)
 
     pygame.quit()
 
