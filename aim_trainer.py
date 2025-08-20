@@ -5,9 +5,9 @@ import random
 import time
 import pygame
 
-WIDTH, HEIGHT = 800, 600
+WIDTH, HEIGHT = 600, 400
 
-WIN = pygame.display.set_mode(WIDTH, HEIGHT)
+WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Aim Trainer")
 
 TARGET_INCREMENT = 400
@@ -56,13 +56,13 @@ def draw(win, targets):
 def main():
     run = True
     targets = []
-    clock = pygame.time.clock()
+    clock = pygame.time.Clock()
 
     pygame.time.set_timer(TARGET_EVENT, TARGET_INCREMENT)
 
     while run:
         clock.tick(60)
-        
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
@@ -76,6 +76,9 @@ def main():
 
         for target in targets:
             target.update()
+
+            if target.size <= 0:
+                targets.remove(target)
 
     draw(WIN, targets)
 
