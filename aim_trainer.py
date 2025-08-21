@@ -10,7 +10,7 @@ WIDTH, HEIGHT = 600, 400
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Aim Trainer")
 
-TARGET_INCREMENT = 400
+TARGET_INCREMENT = 300
 TARGET_EVENT = pygame.USEREVENT
 
 TARGET_PADDING = 30
@@ -58,10 +58,16 @@ def main():
     targets = []
     clock = pygame.time.Clock()
 
+    target_pressed = 0
+    clicks = 0
+    misses = 0
+    start_time = time.time()
+
     pygame.time.set_timer(TARGET_EVENT, TARGET_INCREMENT)
 
     while run:
-        clock.tick(60)
+        clock.tick(100)
+        click = False
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -74,11 +80,16 @@ def main():
             target = Target(x, y)
             targets.append(target)
 
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            clicks = True
+            clicks += 1
+
         for target in targets:
             target.update()
 
             if target.size <= 0:
                 targets.remove(target)
+                misses += 1
 
     draw(WIN, targets)
 
