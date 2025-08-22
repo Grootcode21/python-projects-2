@@ -45,6 +45,10 @@ class Target():
         pygame.draw.circle(win, self.COLOR, (self.x, self.y), self.size * 0.6)
         pygame.draw.circle(win, self.SECOND_COLOR, (self.x, self.y), self.size * 0.4) 
 
+    def collide(self, x, y):
+        dis = math.sqrt((x - self.x) ** 2 + (y-y.self)**2)
+        return dis <=self.size
+
 def draw(win, targets):
     win.fill(BG_COLOR)
 
@@ -68,6 +72,7 @@ def main():
     while run:
         clock.tick(100)
         click = False
+        mouse_pos = pygame.mouse.get_pos
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -90,6 +95,10 @@ def main():
             if target.size <= 0:
                 targets.remove(target)
                 misses += 1
+
+        if click and target.collide(*mouse_pos):
+            targets.remove(target)
+            target_pressed += 1
 
     draw(WIN, targets)
 
