@@ -57,6 +57,8 @@ def draw(win, targets):
 
     pygame.display.update()
 
+def draw_top_bar()
+
 def main():
     run = True
     targets = []
@@ -99,6 +101,9 @@ def main():
         if click and target.collide(*mouse_pos):
             targets.remove(target)
             target_pressed += 1
+
+        if misses >= LIVES:
+            pass
 
     draw(WIN, targets)
 
