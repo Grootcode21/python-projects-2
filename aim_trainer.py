@@ -16,6 +16,10 @@ TARGET_EVENT = pygame.USEREVENT
 TARGET_PADDING = 30
 
 BG_COLOR = (0, 25, 40)
+LIVES = 3
+TOP_BAR_HEIGHT = 50
+
+LABEL_FONT = pygame.font.SysFont("comicsans")
 
 class Target():
     MAX_SIZE = 30
@@ -57,7 +61,8 @@ def draw(win, targets):
 
     pygame.display.update()
 
-def draw_top_bar()
+def draw_top_bar():
+
 
 def main():
     run = True
