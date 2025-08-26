@@ -21,6 +21,7 @@ TOP_BAR_HEIGHT = 50
 
 LABEL_FONT = pygame.font.SysFont("comicsans")
 
+
 class Target():
     MAX_SIZE = 30
     GROWTH_RATE = 0.2
