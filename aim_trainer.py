@@ -19,7 +19,7 @@ BG_COLOR = (0, 25, 40)
 LIVES = 3
 TOP_BAR_HEIGHT = 50
 
-LABEL_FONT = pygame.font.SysFont("comicsans")
+LABEL_FONT = pygame.font.SysFont("comicsans",24)
 
 
 class Target():
@@ -62,7 +62,9 @@ def draw(win, targets):
 
     pygame.display.update()
 
-def draw_top_bar():
+def draw_top_bar(win, elapsed_time, targets_pressed, misses):
+    pygame.draw.rect(win, "grey, (0,0, WIDTH, TOP_BAR_HEIGHT)")
+    
 
 
 def main():
