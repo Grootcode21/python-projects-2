@@ -62,9 +62,13 @@ def draw(win, targets):
 
     pygame.display.update()
 
+def format_time(secs):
+    milli = math.floor(int(secs * 1000 % 1000) / 100)
+    seconds = int(round(secs % 60, 1))
+
 def draw_top_bar(win, elapsed_time, targets_pressed, misses):
     pygame.draw.rect(win, "grey, (0,0, WIDTH, TOP_BAR_HEIGHT)")
-    
+
 
 
 def main():
