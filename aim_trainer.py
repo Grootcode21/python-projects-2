@@ -122,6 +122,8 @@ def main():
             pass
 
     draw(WIN, targets)
+    draw_top_bar(WIN, elapsed_time, target_pressed, misses)
+    pygame.display.update()
 
     
 
