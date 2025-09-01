@@ -73,7 +73,17 @@ def draw_top_bar(win, elapsed_time, targets_pressed, misses):
     pygame.draw.rect(win, "grey, (0,0, WIDTH, TOP_BAR_HEIGHT)")
     time_label = LABEL_FONT.render(f"Time: {format_time(elapsed_time)}", 1, "black")
 
+    speed = round(targets_pressed / elapsed_time, 1)
+    speed_label = LABEL_FONT.render(f"Speed: {speed} t/s", 1, "black")
+
+    hits_label = LABEL_FONT.render(f"Hits: {targets_pressed}", 1, "black")
+
+    lives_label = LABEL_FONT.render(f"Lives: {LIVES - misses}", 1, "black")
+
     win.blit(time_label, (5, 5))
+    win.blit(speed_label, (200, 5))
+    win.blit(hits_label, (450, 5))
+    win.blit(lives_label, (650, 5))
 
 def main():
     run = True
@@ -90,7 +100,8 @@ def main():
     while run:
         clock.tick(100)
         click = False
-        mouse_pos = pygame.mouse.get_pos
+        mouse_pos = pygame.mouse.get_pos()
+        elapsed_time = time.time() - start_time
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -116,13 +127,13 @@ def main():
 
         if click and target.collide(*mouse_pos):
             targets.remove(target)
-            target_pressed += 1
+            targets_pressed += 1
 
         if misses >= LIVES:
-            pass
+            pass #end the game
 
     draw(WIN, targets)
-    draw_top_bar(WIN, elapsed_time, target_pressed, misses)
+    draw_top_bar(WIN, elapsed_time, targets_pressed, misses)
     pygame.display.update()
 
     
