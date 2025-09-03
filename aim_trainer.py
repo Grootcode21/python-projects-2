@@ -85,6 +85,9 @@ def draw_top_bar(win, elapsed_time, targets_pressed, misses):
     win.blit(hits_label, (450, 5))
     win.blit(lives_label, (650, 5))
 
+def end_screen(win, elapsed_time, targets_pressed, clicks):
+    win.blit(BG_COLOR)
+
 def main():
     run = True
     targets = []
@@ -110,7 +113,7 @@ def main():
 
         if event.type == TARGET_EVENT:
             x = random.randint(TARGET_PADDING, WIDTH - TARGET_PADDING)
-            y = random.randint(TARGET_PADDING, HEIGHT - TARGET_PADDING)
+            y = random.randint(TARGET_PADDING + TOP_BAR_HEIGHT, HEIGHT - TARGET_PADDING)
             target = Target(x, y)
             targets.append(target)
 
