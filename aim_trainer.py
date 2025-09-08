@@ -70,7 +70,7 @@ def format_time(secs):
     return f"({minutes:02d}: {seconds:02d}.{milli})"
 
 def draw_top_bar(win, elapsed_time, targets_pressed, misses):
-    pygame.draw.rect(win, "grey, (0,0, WIDTH, TOP_BAR_HEIGHT)")
+    pygame.draw.rect(win, "grey", (0,0, WIDTH, TOP_BAR_HEIGHT))
     time_label = LABEL_FONT.render(f"Time: {format_time(elapsed_time)}", 1, "black")
 
     speed = round(targets_pressed / elapsed_time, 1)
