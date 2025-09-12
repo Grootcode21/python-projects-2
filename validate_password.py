@@ -1,21 +1,26 @@
-password = input("Please enter your password: ")
+import re
 
-
-def validate_password():
+def is_valid_password(password: str) -> bool:
+    # At least 8 characters
     if len(password) < 8:
-        print("Your password is too short")
-    elif not any(char.isupper() for char in password):
-         print("Your password does not have an upper case")
-    elif not any(char.islower() for char in password):
-        print("Your password does not have a lower case")
-    elif not any(char.isdigit() for char in password):
-        print("Your password does not have a digit")
-    elif not any(char in "!@#$%^&*" for char in password):
-        print("Your password does not have special character-s")
-    elif " " in password:
-        print("Your password contains space-s")
+        return False
+    # At least one uppercase letter
+    if not re.search(r"[A-Z]", password):
+        return False
+    # At least one lowercase letter
+    if not re.search(r"[a-z]", password):
+        return False
+    # At least one digit
+    if not re.search(r"\d", password):
+        return False
+    # At least one special character
+    if not re.search(r"[!@#$%^&*(),.?\":{}|<>]", password):
+        return False
+    return True
+
+if __name__ == "__main__":
+    password = input("Enter a password: ").strip()
+    if is_valid_password(password):
+        print("✅ The password is strong and valid.")
     else:
-        print("Your password is password")
-
-
-validate_password()
+        print("❌ The password does not meet security requirements.")
